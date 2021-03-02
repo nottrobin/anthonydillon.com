@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>Anthony Dillon | Web Design</title>
+<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+<meta name="description" content="I am a web designer and developer based in London. Come and check out my recent work and if you like it, just drop me a line." />
+<meta name="keywords" content="website, design, development, user interface, anthony dillon, HTML, PHP, MySQL, CSS" />
+<meta name="author" content="Anthony Dillon">
+<link rel="shortcut icon" href="favicon.png">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="https://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
+<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#contactForm").validate({
+			debug: false,
+			rules: {
+				name: "required",
+				email: {
+					required: true,
+					email: true
+				}
+			},
+			messages: {
+				name: "Please let me know who you are.",
+				email: "A valid email will help me get back to you.",
+			},
+			submitHandler: function(form) {
+				// do other stuff for a valid form
+				$.post('process.php', $("#contactForm").serialize(), function(data) {
+					$('#results').html(data);
+					$("#contactForm .form_field").val("");
+				});
+			}
+		});
+		
+		$('.scrollPage').click(function() {
+		   var elementClicked = $(this).attr("href");
+		   var destination = $(elementClicked).offset().top;
+		   $("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination-20}, 1500 );
+		   return false;
+		});
+	});
+	</script>
+<link rel="stylesheet" href="fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23286488-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+</head>
+<body>
+<div id="container">
+<div id="header">
+<div class="wrapper">
+<div id="header-right">
+<a href="cdn-cgi/l/email-protection#e68b83a68788928e89889f828f8a8a8988c885898b"><span class="__cf_email__" data-cfemail="773a32373639233f38392e333e3b3b38395934383a">[email&#160;protected]</span></a>
+<a href="https://twitter.com/anthonydillon" class="twitter_tab"><img src="images/follow_me_tab.png" border="0"></a>
+</div>
+<nav>
+<a href="index.html">HOME</a>
+<a class="scrollPage" href="index.html#work">MY WORK</a>
+<a class="scrollPage" href="index.html#contact">GET IN TOUCH</a>
+<a href="blog">BLOG</a>
+</nav>
+</div>
+</div>
+<div id="content">
+<div class="wrapper">
+<div id="about">
+<img src="images/ad_logo.jpg" />
+<p>WEBSITE | DESIGN | DEVELOP | CONSULTANCY | FROM ANTHONY, LONDON</p>
+</div>
+<div class="divider"></div>
+<div id="work">
+<a name="work"></a>
+<h1>MY WORK</h1>
+<p>HERE IS RECENT WORK I'VE DONE, HOPE YOU ENJOY IT.</p>
+<div id="projects-container">
+<div class="project" style="padding-left: 0px;"><a href="gorillazProject.html" class="iframe view-project"><img src="images/project-gorillaz.jpg" border="0" /><span class="view-project">VIEW</span></a></div>
+<div class="project"><a href="xfilmProject.html" class="iframe view-project"><img src="images/project-xfilm.jpg" border="0" /><span class="view-project">VIEW</span></a></div>
+<div class="project"><a href="thinklutonProject.html" class="iframe view-project"><img src="images/project-thinkluton.jpg" border="0" /><span class="view-project">VIEW</span></a></div>
+<div class="project"><a href="stellafoamProject.html" class="iframe view-project"><img src="images/project-stellafoam.jpg" border="0" /><span class="view-project">VIEW</span></a></div>
+</div>
+</div>
+<div style="clear:both;"></div>
+<div class="divider"></div>
+<div id="contact">
+<a name="contact"></a>
+<h1>GET IN TOUCH</h1>
+<p>FILL IN THE DETAILS BELOW WITH INFO ABOUT YOUR PROJECT AND I WILL GET BACK TO YOU AS SOON AS POSSIBLE WITH THE NEXT STEPS ON GETTING STARTED.</p>
+<div id="contact_form">
+<form id="contactForm" method="post" action="index.html">
+<div class="grid_5">
+<div class="element"><label>Name (required)</label> <input type="text" id="name" name="name" class="form_field textfield" /></div>
+<div class="element"><label>Message </label> <textarea id="comment" name="message" class="form_field textarea"></textarea></div>
+</div>
+<div class="grid_6">
+<div class="element"><label>Email (required)</label> <input type="text" id="email" name="email" class="form_field textfield" /></div>
+<div class="element"><label>Type of Project</label> <input type="text" id="project" name="project" class="form_field textfield" /></div>
+<div id="results"></div>
+<input class="contact_btn" type="submit" name="submit" id="submit" value="Send" />
+</div>
+</form>
+</div>
+<div style="clear:both;"></div>
+<p>FEEL FREE TO EMAIL <a href="cdn-cgi/l/email-protection#f19c94b1909f85999e9f8895989d9d9e9fdf929e9c" /><span class="__cf_email__" data-cfemail="4d00080d0c031905020314090401010203630e0200">[email&#160;protected]</span></a> WITH ANY QUESTIONS OR JUST TO SAY HI.</p>
+</div>
+</div>
+</div>
+<div id="footer">
+<div class="wrapper">
+<img src="images/footer_logo.jpg" />
+<p>&copy; 2021 ANTHONY DILLON</p>
+</div>
+</div>
+</div>
+<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
+		$(document).ready(function() {
+			$("a.iframe").fancybox();
+		});
+	</script>
+</body>
+</html>

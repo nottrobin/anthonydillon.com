@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>Anthony Dillon | Canvas Birds</title>
+<link rel="stylesheet" type="text/css" href="../../style.css" media="all" />
+<meta name="description" content="I am a web designer and developer based in Luton. Come and check out my recent work and if you like it, just drop me a line." />
+<meta name="keywords" content="website, design, development, user interface, anthony dillon" />
+<meta name="author" content="Anthony Dillon">
+<link rel="shortcut icon" href="../../favicon.png">
+<script type="text/javascript" src="js/bird2.js"></script>
+<script charset="utf-8" type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+<style type="text/css">  
+		canvas { 
+			border: 1px solid #999;
+			background-image:url('images/background.jpg');
+			-moz-box-shadow: 5px 5px 5px #ccc;
+			-webkit-box-shadow: 5px 5px 5px #ccc;
+			box-shadow: 5px 5px 5px #ccc;
+			margin-top:20px;
+		}
+		#flying img{
+			width:112px;
+		}
+		#landing img{
+			width:74px;
+		}
+		.back-button a:hover{
+			color:#d73332;
+		}
+	</style>
+<script>
+		var canvas = null;
+		
+		function loadCanvas( ) {
+		
+			canvas = document.getElementById( 'canvas' );
+			new BirdHandler( canvas, 5 );
+			
+		}
+		window.addEventListener( 'load', loadCanvas, false );
+	</script>
+<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23286488-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+</head>
+<body>
+<div id="container">
+<div id="header">
+<div class="wrapper">
+<div id="header-right">
+<a href="../../cdn-cgi/l/email-protection#45282005242b312d2a2b3c212c29292a2b6b262a28"><span class="__cf_email__" data-cfemail="7d30383d3c332935323324393431313233533e3230">[email&#160;protected]</span></a>
+<a href="https://twitter.com/anthonydillon" class="twitter_tab"><img src="../../images/follow_me_tab.png" border="0"></a>
+</div>
+<nav>
+<a href="../../index.html">HOME</a>
+<a class="scrollPage" href="../../index.html#work">MY WORK</a>
+<a class="scrollPage" href="../../index.html#contact">GET IN TOUCH</a>
+<a href="../../blog">BLOG</a>
+</nav>
+</div>
+</div>
+<div id="content">
+<div class="wrapper">
+<div id="about">
+<img src="../../images/ad_logo.jpg" />
+<p>WEBSITE | DESIGN | DEVELOP | CONSULTANCY | FROM ANTHONY, LONDON</p>
+</div>
+<div class="divider"></div>
+<div>
+<p class="back-button"><a href="../../blog" title="Back to Blog">Back to Blog</a>
+<div style="float:right;"><span class='st_facebook_hcount' st_title='HTML5 Canvas Birds' st_url='http://anthonydillon.com/demos/birds/' displayText='share'></span><span class='st_twitter_hcount' st_title='HTML5 Canvas Birds' st_url='http://anthonydillon.com/demos/birds/' displayText='share'></span></div>
+<h1>HTML5 CANVAS BIRDS</h1>
+<div style="clear:both;"></div>
+<div>
+<canvas id="canvas" width="1000" height="632"></canvas>
+</div>
+<p style="font-size: 18px;">
+This project originally started out as a screensaver but as with so many projects it never came to be. But I still think its a cool demo of power and flexibility of canvas in HTML5.
+</p>
+<p style="font-size: 18px;">
+I started off designing a bird that would fly through the sky from left to right and reappear on the left again. I wanted to expand it to handle more then one bird so I developed a bird handler which I'll get into in the following tutorials. Then added posts for them to randomly land on and push the other birds that are still sitting on the post off. Finally added poo as a little detail to finish off the scene.
+<p>
+Flying squence:
+</p>
+<p id="flying">
+<img src="images/sequence_resized/bird1.png" alt="Bird 1" />
+<img src="images/sequence_resized/bird2.png" alt="Bird 2" />
+<img src="images/sequence_resized/bird3.png" alt="Bird 3" />
+<img src="images/sequence_resized/bird4.png" alt="Bird 4" />
+<img src="images/sequence_resized/bird5.png" alt="Bird 5" />
+<img src="images/sequence_resized/bird6.png" alt="Bird 6" />
+<img src="images/sequence_resized/bird7.png" alt="Bird 7" />
+<img src="images/sequence_resized/bird8.png" alt="Bird 8" />
+</p>
+<p>
+Landing squence:
+</p>
+<p id="landing">
+<img src="images/sequence_resized/landing1.png" alt="Landing Bird 1" />
+<img src="images/sequence_resized/landing2.png" alt="Landing Bird 2" />
+<img src="images/sequence_resized/landing3.png" alt="Landing Bird 3" />
+<img src="images/sequence_resized/landing4.png" alt="Landing Bird 4" />
+<img src="images/sequence_resized/landing5.png" alt="Landing Bird 5" />
+<img src="images/sequence_resized/landing6.png" alt="Landing Bird 6" />
+<img src="images/sequence_resized/landing7.png" alt="Landing Bird 7" />
+<img src="images/sequence_resized/landing8.png" alt="Landing Bird 8" />
+<img src="images/sequence_resized/landing9.png" alt="Landing Bird 9" />
+<img src="images/sequence_resized/landing10.png" alt="Landing Bird 10" />
+<img src="images/sequence_resized/landing11.png" alt="Landing Bird 11" />
+<img src="images/sequence_resized/landing12.png" alt="Landing Bird 11" />
+</p>
+</div>
+</div>
+</div>
+<div id="footer">
+<div class="wrapper">
+<img src="../../images/footer_logo.jpg" />
+<p>&copy; 2011 ANTHONY DILLON</p>
+</div>
+</div>
+</div>
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

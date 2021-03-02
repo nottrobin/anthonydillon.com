@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<link rel="shortcut icon" href="../favicon.png">
+<title>HTML5 Canvas Birds | Anthony Dillon | Blog</title>
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="https://anthonydillon.com/blog/wp-content/themes/anthonydillon/style.css" />
+<link rel="pingback" href="xmlrpc.php" />
+<link rel="alternate" type="application/rss+xml" title="Anthony Dillon | Blog &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Anthony Dillon | Blog &raquo; Comments Feed" href="comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Anthony Dillon | Blog &raquo; HTML5 Canvas Birds Comments Feed" href="html5-canvas-birds/feed/index.html" />
+<link rel='stylesheet' id='codecolorer-css' href='wp-content/plugins/codecolorer/codecolorer.css?ver=0.9.9' type='text/css' media='screen' />
+<script type='text/javascript' src='wp-includes/js/l10n.js?ver=20101110'></script>
+<script type='text/javascript' src='wp-includes/js/comment-reply.js?ver=20090102'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" />
+<link rel='index' title='Anthony Dillon | Blog' href='../blog' />
+<link rel='start' title='Finally done my website!' href='index.html?p=1' />
+<link rel='prev' title='Large fonts in CSS' href='index.html?p=12' />
+<link rel='next' title='Canvas Wave' href='index.html?p=26' />
+<meta name="generator" content="WordPress 3.1.2" />
+<link rel='canonical' href='index.html?p=18' />
+<link rel='shortlink' href='index.html?p=18' />
+<script charset="utf-8" type="text/javascript">var switchTo5x=true;</script><script charset="utf-8" type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'wp.41f99cd0-9d6f-436c-927c-3e06fc865300'});var st_type='wordpress3.1.2';</script> <script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23286488-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+</head>
+<body class="single single-post postid-18 single-format-standard">
+<div id="my-header">
+<div id="wrapper" class="hfeed">
+<div id="header-right">
+<a href="../cdn-cgi/l/email-protection#48252d0829263c202726312c2124242726662b2725"><span class="__cf_email__" data-cfemail="602d2520212e34282f2e3924292c2c2f2e4e232f2d">[email&#160;protected]</span></a>
+<a href="https://twitter.com/anthonydillon" class="twitter_tab"><img src="../images/follow_me_tab.png" border="0"></a>
+</div>
+<nav>
+<a href="../index.html">HOME</span>
+<a href="../index.html#work">MY WORK</a>
+<a href="../index.html#contact">GET IN TOUCH</a>
+<a href="../blog">BLOG</a>
+</nav>
+<div class="myLogo">
+<img src="../images/ad_logo.jpg" />
+</div>
+</div>
+</div>
+<div id="main">
+<div id="container">
+<div id="content" role="main">
+<div id="nav-above" class="navigation">
+<div class="nav-previous"><a href="index.html?p=12" rel="prev"><span class="meta-nav">&larr;</span> Large fonts in CSS</a></div>
+<div class="nav-next"><a href="index.html?p=26" rel="next">Canvas Wave <span class="meta-nav">&rarr;</span></a></div>
+</div>
+<div id="post-18" class="post-18 post type-post status-publish format-standard hentry category-blogs">
+<h1 class="entry-title">HTML5 Canvas Birds</h1>
+<div class="entry-meta">
+<span class="meta-prep meta-prep-author">Posted on</span> <a href="index.html?p=18" title="5:05 pm" rel="bookmark"><span class="entry-date">May 16, 2011</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="author/anthony-dillon/index.html" title="View all posts by Anthony Dillon">Anthony Dillon</a></span> </div>
+<div class="entry-content">
+<p><a title="View Demo" href="../demos/birds/index.html"><img class="aligncenter size-full wp-image-19" src="wp-content/uploads/2011/05/canvasbirds.jpg" border="0" alt="" width="660" height="417" />View Demo</a></p>
+<p>This project originally started out as a screensaver but as with so many projects it never came to be. But I still think its a cool demo of power and flexibility of canvas in HTML5.</p>
+<p>I started off designing a bird that would fly through the sky from left to right and reappear on the left again. I wanted to expand it to handle more then one bird so I developed a bird handler which I&#8217;ll get into in the following tutorials. Then added posts for them to randomly land on and push the other birds that are still sitting on the post off. Finally added poo as a little detail to finish off the scene.</p>
+<p><span class='st_facebook_hcount' st_title='HTML5 Canvas Birds' st_url='https://anthonydillon.com/blog/html5-canvas-birds/' displayText='share'></span><span class='st_twitter_hcount' st_title='HTML5 Canvas Birds' st_url='https://anthonydillon.com/blog/html5-canvas-birds/' displayText='share'></span></p> </div>
+<div class="entry-utility">
+This entry was posted in <a href="category/blogs/index.html" title="View all posts in Blogs" rel="category tag">Blogs</a>. Bookmark the <a href="index.html?p=18" title="Permalink to HTML5 Canvas Birds" rel="bookmark">permalink</a>. </div>
+</div>
+<div id="nav-below" class="navigation">
+<div class="nav-previous"><a href="index.html?p=12" rel="prev"><span class="meta-nav">&larr;</span> Large fonts in CSS</a></div>
+<div class="nav-next"><a href="index.html?p=26" rel="next">Canvas Wave <span class="meta-nav">&rarr;</span></a></div>
+</div>
+<div id="comments">
+<div id="respond">
+<h3 id="reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html?p=18#respond" style="display:none;">Cancel reply</a></small></h3>
+<form action="https://anthonydillon.com/blog/wp-comments-post.php" method="post" id="commentform">
+<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p> <p class="comment-form-author"><label for="author">Name</label> <span class="required">*</span><input id="author" name="author" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-email"><label for="email">Email</label> <span class="required">*</span><input id="email" name="email" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-url"><label for="url">Website</label><input id="url" name="url" type="text" value="" size="30" /></p>
+<p class="comment-form-comment"><label for="comment">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p> <p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code></p> <p class="form-submit">
+<input name="submit" type="submit" id="submit" value="Post Comment" />
+<input type='hidden' name='comment_post_ID' value='18' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="f46715932b" /></p> </form>
+</div>
+</div>
+</div>
+</div>
+<div id="primary" class="widget-area" role="complementary">
+<ul class="xoxo">
+<li id="recent-posts-2" class="widget-container widget_recent_entries"> <h3 class="widget-title">Recent Posts</h3> <ul>
+<li><a href="index.html?p=105" title="Surprising CSS selectors you can use today">Surprising CSS selectors you can use today</a></li>
+<li><a href="index.html?p=103" title="Ant.FM">Ant.FM</a></li>
+<li><a href="index.html?p=90" title="Always show the time on Moto360">Always show the time on Moto360</a></li>
+<li><a href="index.html?p=84" title="Handling &#8220;class&#8221; attribute in Beautifulsoup">Handling &#8220;class&#8221; attribute in Beautifulsoup</a></li>
+<li><a href="index.html?p=78" title="Using Modernizr with Opera Mini">Using Modernizr with Opera Mini</a></li>
+</ul>
+</li><li id="linkcat-2" class="widget-container widget_links"><h3 class="widget-title">Friends</h3>
+<ul class='xoxo blogroll'>
+<li><a href="http://naobrown.com/">Glyn Dillon</a></li>
+<li><a href="http://www.rekim.com/">Mike Robinson</a></li>
+<li><a href="http://www.timwatkins.uk.com/">Tim Watkins</a></li>
+<li><a href="http://zulu-studios.com/">Zulu Studios</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="footer">
+<div id="wrapper">
+<img src="../images/footer_logo.jpg" />
+<p>&copy; 2021 ANTHONY DILLON</p>
+</div>
+</div>
+
+</div>
+<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

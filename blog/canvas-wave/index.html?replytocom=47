@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<link rel="shortcut icon" href="../../favicon.png">
+<title>Canvas Wave | Anthony Dillon | Blog</title>
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="https://anthonydillon.com/blog/wp-content/themes/anthonydillon/style.css" />
+<link rel="pingback" href="../xmlrpc.php" />
+<link rel="alternate" type="application/rss+xml" title="Anthony Dillon | Blog &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Anthony Dillon | Blog &raquo; Comments Feed" href="../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Anthony Dillon | Blog &raquo; Canvas Wave Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='codecolorer-css' href='../wp-content/plugins/codecolorer/codecolorer.css?ver=0.9.9' type='text/css' media='screen' />
+<script type='text/javascript' src='../wp-includes/js/l10n.js?ver=20101110'></script>
+<script type='text/javascript' src='../wp-includes/js/comment-reply.js?ver=20090102'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" />
+<link rel='index' title='Anthony Dillon | Blog' href='../../blog' />
+<link rel='start' title='Finally done my website!' href='../index.html?p=1' />
+<link rel='prev' title='HTML5 Canvas Birds' href='../index.html?p=18' />
+<link rel='next' title='Performance enhancing tips with jQuery' href='../index.html?p=51' />
+<meta name="generator" content="WordPress 3.1.2" />
+<link rel='canonical' href='../index.html?p=26' />
+<link rel='shortlink' href='../index.html?p=26' />
+<script charset="utf-8" type="text/javascript">var switchTo5x=true;</script><script charset="utf-8" type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'wp.41f99cd0-9d6f-436c-927c-3e06fc865300'});var st_type='wordpress3.1.2';</script> <script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23286488-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+</head>
+<body class="single single-post postid-26 single-format-standard">
+<div id="my-header">
+<div id="wrapper" class="hfeed">
+<div id="header-right">
+<a href="../../cdn-cgi/l/email-protection#bad7dffadbd4ced2d5d4c3ded3d6d6d5d494d9d5d7"><span class="__cf_email__" data-cfemail="7c31393c3d322834333225383530303332523f3331">[email&#160;protected]</span></a>
+<a href="https://twitter.com/anthonydillon" class="twitter_tab"><img src="../../images/follow_me_tab.png" border="0"></a>
+</div>
+<nav>
+<a href="../../index.html">HOME</span>
+<a href="../../index.html#work">MY WORK</a>
+<a href="../../index.html#contact">GET IN TOUCH</a>
+<a href="../../blog">BLOG</a>
+</nav>
+<div class="myLogo">
+<img src="../../images/ad_logo.jpg" />
+</div>
+</div>
+</div>
+<div id="main">
+<div id="container">
+<div id="content" role="main">
+<div id="nav-above" class="navigation">
+<div class="nav-previous"><a href="../index.html?p=18" rel="prev"><span class="meta-nav">&larr;</span> HTML5 Canvas Birds</a></div>
+<div class="nav-next"><a href="../index.html?p=51" rel="next">Performance enhancing tips with jQuery <span class="meta-nav">&rarr;</span></a></div>
+</div>
+<div id="post-26" class="post-26 post type-post status-publish format-standard hentry category-blogs">
+<h1 class="entry-title">Canvas Wave</h1>
+<div class="entry-meta">
+<span class="meta-prep meta-prep-author">Posted on</span> <a href="../index.html?p=26" title="1:33 pm" rel="bookmark"><span class="entry-date">May 19, 2011</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="../author/anthony-dillon/index.html" title="View all posts by Anthony Dillon">Anthony Dillon</a></span> </div>
+<div class="entry-content">
+<p>While toying around with the drawing aspect of canvas I started using Quadratic Curve’s to make a line bob up and down. Putting them side by side in reverse, mimicked a line waving.By creating more than one and placing them on top of each other it replicated a waving ocean.<br />
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../../demos/waves/waves.js" type="text/javascript"></script><script>
+	var canvas = null;
+	var waves = null;
+	function loadCanvas( ) {
+		canvas = document.getElementById( 'canvas' );
+		waves = new Waves( canvas,660,417 );
+		setInterval( "run()", 80 );
+	}
+	function run(){
+		waves.update( );
+		waves.draw( );
+	}
+	window.addEventListener( 'load', loadCanvas, false );
+</script><br />
+<canvas id="canvas" width="660" height="417" style="background-color: black;"></canvas></p>
+<p>Full Tutorial &#8211; Continue to read&#8230;<br />
+<span id="more-26"></span><br />
+Let’s get started with the HTML for the page. This will stay the same through out the tutorial so I’ll just give you all the content you need for it in one.</p>
+<div class="codecolorer-container html4strict default" style="overflow:auto;white-space:nowrap;width:660px;height:300px;"><div class="html4strict codecolorer"><span class="sc2">&lt;<a href="http://december.com/html/4/element/html.html"><span class="kw2">html</span></a>&gt;</span><br />
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/head.html"><span class="kw2">head</span></a>&gt;</span><br />
+&nbsp; &nbsp; <span class="sc2">&lt;<a href="http://december.com/html/4/element/title.html"><span class="kw2">title</span></a>&gt;</span>My Wave<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/title.html"><span class="kw2">title</span></a>&gt;</span><br />
+&nbsp; &nbsp; <span class="sc2">&lt;<a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a> <span class="kw3">type</span><span class="sy0">=</span><span class="st0">&quot;text/javascript&quot;</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">&quot;waves.js&quot;</span>&gt;&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a>&gt;</span><br />
+&nbsp; &nbsp; <span class="sc2">&lt;<a href="http://december.com/html/4/element/style.html"><span class="kw2">style</span></a> <span class="kw3">type</span><span class="sy0">=</span><span class="st0">&quot;text/css&quot;</span>&gt;</span> &nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; canvas { <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background-color: black;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; } &nbsp;<br />
+&nbsp; &nbsp; <span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/style.html"><span class="kw2">style</span></a>&gt;</span> <br />
+&nbsp; &nbsp; <span class="sc2">&lt;<a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a>&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; var canvas = null;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; var waves = null;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; function loadCanvas( ) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; canvas = document.getElementById( 'canvas' );<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; waves = new Waves( canvas,660,417 );<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; setInterval( &quot;run()&quot;, 80 );<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; function run(){<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; waves.update( );<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; waves.draw( );<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; window.addEventListener( 'load', loadCanvas, false );<br />
+&nbsp; &nbsp; <span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a>&gt;</span><br />
+<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/head.html"><span class="kw2">head</span></a>&gt;</span><br />
+<span class="sc2">&lt;<a href="http://december.com/html/4/element/body.html"><span class="kw2">body</span></a>&gt;</span><br />
+<span class="sc2">&lt;canvas <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;canvas&quot;</span> <span class="kw3">width</span><span class="sy0">=</span><span class="st0">&quot;660&quot;</span> <span class="kw3">height</span><span class="sy0">=</span><span class="st0">&quot;417&quot;</span>&gt;&lt;<span class="sy0">/</span>canvas&gt;</span><br />
+<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/body.html"><span class="kw2">body</span></a>&gt;</span><br />
+<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/html.html"><span class="kw2">html</span></a>&gt;</span></div></div>
+<p>We begin by including the main javascript class that handles the waves behavior (waves.js). Then style the canvas to give it a black background.</p>
+<p>Then we move into the initialising stage. Add an event listener to the page the calls <strong>loadCanvas()</strong> when the page is loaded. This function grabs the canvas by its id and creates an instance of the <strong>Waves </strong>object and passes it the to canvas to draw to, its width (660) and height (417). Finally creates an interval that calls <strong>run()</strong> every 80 milliseconds.</p>
+<p>The run function calls the waves object<strong> update()</strong> followed by the <strong>draw()</strong> functions. This is how many games are developed as we’ll see later. Its not just a case of moving a line, it requires clearing the screen and redrawing it frame by frame.</p>
+<p>Now lets move into the <strong>wave.js</strong>. Create a javascript document and save it into the same folder as the HTML file, calling it waves.js.</p>
+<h2>The Wave Object</h2>
+<p>Lets start off by making the Wave object:</p>
+<div class="codecolorer-container javascript default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="javascript codecolorer"><span class="kw2">function</span> Wave<span class="br0">&#40;</span> $canvas<span class="sy0">,</span> $y<span class="sy0">,</span> $colour <span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span> <span class="sy0">=</span> $canvas.<span class="me1">getContext</span><span class="br0">&#40;</span> <span class="st0">'2d'</span> <span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">force</span> <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">wavePower</span> <span class="sy0">=</span> <span class="nu0">40</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">count</span> <span class="sy0">=</span> $y<span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">y</span> <span class="sy0">=</span> $y <span class="sy0">+</span> Waves.<span class="me1">globalY</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">alpha</span> <span class="sy0">=</span> <span class="nu0">0.1</span><span class="sy0">;</span><br />
+<span class="br0">&#125;</span></div></div>
+<p>As you can see the wave object takes three parameters. A reference to the canvas for it to draw straight onto, a Y position to create the wave on and a colour. Now we define a few parameters such as, force (which will be applied in the update function), wavePower (relates to how much the wave rises and lowers) and alpha which is set to 0.1 allowing the colours to multiply as they lay on top of each other it makes it look like the ocean is fading to darkness.</p>
+<p>Each object needs an update and draw function if its displaying something. Each of these functions are placed inside the main object function. Lets add the wave’s update function:</p>
+<div class="codecolorer-container javascript default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="javascript codecolorer"><span class="kw1">this</span>.<span class="me1">update</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">y</span> <span class="sy0">=</span> $y <span class="sy0">+</span> Waves.<span class="me1">globalY</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">force</span> <span class="sy0">=</span> Math.<span class="me1">sin</span><span class="br0">&#40;</span><span class="kw1">this</span>.<span class="me1">count</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">count</span> <span class="sy0">+=</span> <span class="nu0">0.05</span><span class="sy0">;</span><br />
+<span class="br0">&#125;</span></div></div>
+<p>We update the y variable by adding the globalY. This allows the handler class to move the waves up and down together. We manipulate the force using the sine function, which produces a number from -1 to 1 and by updating the force by a sine of a steady increasing number we get a climb to 1 then back to -1.</p>
+<p><img class="aligncenter size-medium wp-image-36" src="../wp-content/uploads/2011/05/Sin_drawing_process-300x105.gif" alt="" width="300" height="105" /></p>
+<p>Now onto the draw function:</p>
+<div class="codecolorer-container javascript default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="javascript codecolorer"><span class="kw1">this</span>.<span class="me1">draw</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">fillStyle</span> <span class="sy0">=</span> <span class="st0">&quot;rgba(0, 0, 0, 0.1)&quot;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">fillRect</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span>Waves.<span class="me1">width</span><span class="sy0">,</span>Waves.<span class="me1">height</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">fillStyle</span> <span class="sy0">=</span> <span class="st0">&quot;rgba(&quot;</span><span class="sy0">+</span>$colour<span class="sy0">+</span><span class="st0">&quot;, &quot;</span><span class="sy0">+</span><span class="kw1">this</span>.<span class="me1">alpha</span><span class="sy0">+</span><span class="st0">&quot;)&quot;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">beginPath</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">moveTo</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> <span class="kw1">this</span>.<span class="me1">y</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">quadraticCurveTo</span><span class="br0">&#40;</span>Waves.<span class="me1">width</span> <span class="sy0">/</span> <span class="nu0">4</span><span class="sy0">,</span> <span class="kw1">this</span>.<span class="me1">y</span> <span class="sy0">+</span> <span class="br0">&#40;</span> <span class="kw1">this</span>.<span class="me1">wavePower</span> <span class="sy0">*</span> <span class="kw1">this</span>.<span class="me1">force</span> <span class="br0">&#41;</span><span class="sy0">,</span> Waves.<span class="me1">width</span> <span class="sy0">/</span> <span class="nu0">2</span><span class="sy0">,</span> <span class="kw1">this</span>.<span class="me1">y</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">quadraticCurveTo</span><span class="br0">&#40;</span>Waves.<span class="me1">width</span> <span class="sy0">*</span> <span class="nu0">0.75</span><span class="sy0">,</span> <span class="kw1">this</span>.<span class="me1">y</span> <span class="sy0">-</span> <span class="br0">&#40;</span> <span class="kw1">this</span>.<span class="me1">wavePower</span> <span class="sy0">*</span> <span class="kw1">this</span>.<span class="me1">force</span> <span class="br0">&#41;</span><span class="sy0">,</span> Waves.<span class="me1">width</span><span class="sy0">,</span> <span class="kw1">this</span>.<span class="me1">y</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">lineTo</span><span class="br0">&#40;</span>Waves.<span class="me1">width</span><span class="sy0">,</span> Waves.<span class="me1">height</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">lineTo</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> Waves.<span class="me1">height</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">lineTo</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> <span class="kw1">this</span>.<span class="me1">y</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">closePath</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">fill</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+<span class="br0">&#125;</span></div></div>
+<p>The first two lines of this function draws a black box over the whole screen with an opacity of 0.1 (10%). This leaves a ghost of the wave as it moves which fades with each redraw. I used this instead of clearing the whole screen as its leaves a nice effect. To clear the screen use:</p>
+<div class="codecolorer-container javascript default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="javascript codecolorer"><span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">clearRect</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> Waves.<span class="me1">width</span><span class="sy0">,</span>Waves.<span class="me1">height</span><span class="br0">&#41;</span><span class="sy0">;</span></div></div>
+<p>We begin to draw the new wave, setting the fill colour to the randomly generated one and the alpha of the wave, in this case is 0.1. The beginPath function starts a new path. We move to the starting postion which is the the left most side of the canvas and the waves y position.</p>
+<p>The quadraticCurveTo function takes four variables. The first two are the X and Y position of the control point. This is followed by the X and Y of the end point.</p>
+<p><img class="aligncenter size-full wp-image-37" src="../wp-content/uploads/2011/05/QuadraticCurve.png" alt="" width="504" height="217" /></p>
+<p>This first curve will cover half the screen from left most point to the center. We set the first control points X position to a quarter the way across the canvas and its Y position based the on waves Y plus the wavePower (40) times by the force (-1 to 1). Its end points are the center of the canvas on the waves Y position.</p>
+<p>Now we do the same curve starting from the center of the screen and ending at the far right side of the canvas. This time were minusing the wavePower times force. Finish by using lineTo to draw to the bottom right of the canvas then to the bottom left of the then up to the waves y position. The path can be closed using closePath. Finally fill the drawn area.</p>
+<p>That’s it! We have a full wave object that can be updated and re-drawn to our liking. So lets move on to the handler class which I’ve called Waves.</p>
+<h2>The Waves Object</h2>
+<p>This is the object that is created in the HTML and controls the waves. The Waves function takes three parameters as discussed before. A reference to the canvas, a width and a height to set the waves.</p>
+<div class="codecolorer-container javascript default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="javascript codecolorer"><span class="kw2">function</span> Waves<span class="br0">&#40;</span> $canvas<span class="sy0">,</span> $width<span class="sy0">,</span> $height <span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">numberOfWaves</span> <span class="sy0">=</span> <span class="nu0">10</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">waveGap</span> <span class="sy0">=</span> <span class="nu0">20</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">width</span> <span class="sy0">=</span> Waves.<span class="me1">width</span> <span class="sy0">=</span> $width<span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">height</span> <span class="sy0">=</span> Waves.<span class="me1">height</span> <span class="sy0">=</span> $height<span class="sy0">;</span><br />
+&nbsp; &nbsp; Waves.<span class="me1">globalY</span> <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">move</span> <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span> <span class="sy0">=</span> $canvas.<span class="me1">getContext</span><span class="br0">&#40;</span> <span class="st0">'2d'</span> <span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">colour</span> <span class="sy0">=</span> Math.<span class="me1">round</span><span class="br0">&#40;</span>Math.<span class="me1">random</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">*</span><span class="nu0">255</span><span class="br0">&#41;</span><span class="sy0">+</span><span class="st0">&quot;, &quot;</span><span class="sy0">+</span>Math.<span class="me1">round</span><span class="br0">&#40;</span>Math.<span class="me1">random</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">*</span><span class="nu0">255</span><span class="br0">&#41;</span><span class="sy0">+</span><span class="st0">&quot;, &quot;</span><span class="sy0">+</span>Math.<span class="me1">round</span><span class="br0">&#40;</span>Math.<span class="me1">random</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">*</span><span class="nu0">255</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">wavesArray</span> <span class="sy0">=</span> <span class="kw2">new</span> Array<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">beginingY</span> <span class="sy0">=</span> Waves.<span class="me1">height</span> <span class="sy0">/</span> <span class="nu0">2</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">while</span><span class="br0">&#40;</span><span class="kw1">this</span>.<span class="me1">numberOfWaves</span><span class="sy0">--</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">wavesArray</span>.<span class="me1">push</span><span class="br0">&#40;</span><span class="kw2">new</span> Wave<span class="br0">&#40;</span>$canvas<span class="sy0">,</span> <span class="kw1">this</span>.<span class="me1">beginingY</span><span class="sy0">,</span> <span class="kw1">this</span>.<span class="me1">colour</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">beginingY</span> <span class="sy0">+=</span> <span class="kw1">this</span>.<span class="me1">waveGap</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<span class="br0">&#125;</span></div></div>
+<p>Here is the main part of the Waves object that constructs an array of Wave objects. There are a few variables which dictate the behaviour of the “ocean”. <strong>numberOfWaves </strong>is pretty straight forward, its the number of waves that are created and displayed. <strong>waveGap </strong>is the amount of pixels between each wave. Were defining a random colour which is passed the waves to draw. By giving them different colours can result in fun looking oceans.</p>
+<p>We are looping through the numberOfWaves creating instances of the Wave object and storing them in the wavesArray.</p>
+<p>But remember the javascript on the HTML page are calling <strong>waves.update( )</strong> and <strong>waves.draw()</strong>. These still need to be created. These functions are much easier than the update and draw functions in the wave object. These functions just need to loop through the wavesArray calling the wave objects update and draw functions. Here they are:</p>
+<div class="codecolorer-container javascript default" style="overflow:auto;white-space:nowrap;width:660px;height:300px;"><div class="javascript codecolorer"><span class="kw1">this</span>.<span class="me1">update</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="kw2">var</span> bL <span class="sy0">=</span> <span class="kw1">this</span>.<span class="me1">wavesArray</span>.<span class="me1">length</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">while</span><span class="br0">&#40;</span> bL<span class="sy0">--</span> <span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">wavesArray</span><span class="br0">&#91;</span> bL <span class="br0">&#93;</span>.<span class="me1">update</span><span class="br0">&#40;</span> <span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; Waves.<span class="me1">globalY</span> <span class="sy0">+=</span> <span class="kw1">this</span>.<span class="me1">move</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">if</span><span class="br0">&#40;</span>Waves.<span class="me1">globalY</span> <span class="sy0">&gt;</span> <span class="br0">&#40;</span>Waves.<span class="me1">height</span> <span class="sy0">/</span> <span class="nu0">2</span><span class="br0">&#41;</span><span class="sy0">-</span><span class="nu0">50</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">move</span> <span class="sy0">=</span> <span class="sy0">-</span><span class="nu0">1</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>Waves.<span class="me1">globalY</span> <span class="sy0">&lt;</span> <span class="sy0">-</span><span class="br0">&#40;</span>Waves.<span class="me1">height</span> <span class="sy0">/</span> <span class="nu0">2</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">move</span> <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<span class="br0">&#125;</span><br />
+&nbsp; &nbsp; <br />
+<span class="kw1">this</span>.<span class="me1">draw</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">save</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw2">var</span> bL <span class="sy0">=</span> <span class="kw1">this</span>.<span class="me1">wavesArray</span>.<span class="me1">length</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">while</span><span class="br0">&#40;</span> bL<span class="sy0">--</span> <span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">wavesArray</span><span class="br0">&#91;</span> bL <span class="br0">&#93;</span>.<span class="me1">draw</span><span class="br0">&#40;</span> <span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">restore</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+<span class="br0">&#125;</span></div></div>
+<p>The only part that is unexpected here is changing the globalY variable in the update function. If you remember this is added to the waves Y position as they are drawn. And there we have it! A Wave object created and controlled by a Waves object. I encourage you to play around with the variables and even add some of your own and see what results you get! Post below with your own twist on this wave class. I look forward to seeing what you can come up with.</p>
+<p><img class="aligncenter size-full wp-image-38" src="../wp-content/uploads/2011/05/waves.jpg" alt="" width="655" height="359" /></p>
+<p>The full waves.js code:</p>
+<div class="codecolorer-container javascript default" style="overflow:auto;white-space:nowrap;width:660px;height:300px;"><div class="javascript codecolorer"><span class="kw2">function</span> Waves<span class="br0">&#40;</span> $canvas<span class="sy0">,</span> $width<span class="sy0">,</span> $height <span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">numberOfWaves</span> <span class="sy0">=</span> <span class="nu0">10</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">waveGap</span> <span class="sy0">=</span> <span class="nu0">20</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">width</span> <span class="sy0">=</span> Waves.<span class="me1">width</span> <span class="sy0">=</span> $width<span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">height</span> <span class="sy0">=</span> Waves.<span class="me1">height</span> <span class="sy0">=</span> $height<span class="sy0">;</span><br />
+&nbsp; &nbsp; Waves.<span class="me1">globalY</span> <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">move</span> <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span> <span class="sy0">=</span> $canvas.<span class="me1">getContext</span><span class="br0">&#40;</span> <span class="st0">'2d'</span> <span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">colour</span> <span class="sy0">=</span> Math.<span class="me1">round</span><span class="br0">&#40;</span>Math.<span class="me1">random</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">*</span><span class="nu0">255</span><span class="br0">&#41;</span><span class="sy0">+</span><span class="st0">&quot;, &quot;</span><span class="sy0">+</span>Math.<span class="me1">round</span><span class="br0">&#40;</span>Math.<span class="me1">random</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">*</span><span class="nu0">255</span><span class="br0">&#41;</span><span class="sy0">+</span><span class="st0">&quot;, &quot;</span><span class="sy0">+</span>Math.<span class="me1">round</span><span class="br0">&#40;</span>Math.<span class="me1">random</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">*</span><span class="nu0">255</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">wavesArray</span> <span class="sy0">=</span> <span class="kw2">new</span> Array<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">beginingY</span> <span class="sy0">=</span> Waves.<span class="me1">height</span> <span class="sy0">/</span> <span class="nu0">2</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">while</span><span class="br0">&#40;</span><span class="kw1">this</span>.<span class="me1">numberOfWaves</span><span class="sy0">--</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">wavesArray</span>.<span class="me1">push</span><span class="br0">&#40;</span><span class="kw2">new</span> Wave<span class="br0">&#40;</span>$canvas<span class="sy0">,</span> <span class="kw1">this</span>.<span class="me1">beginingY</span><span class="sy0">,</span> <span class="kw1">this</span>.<span class="me1">colour</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">beginingY</span> <span class="sy0">+=</span> <span class="kw1">this</span>.<span class="me1">waveGap</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; <br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">update</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw2">var</span> bL <span class="sy0">=</span> <span class="kw1">this</span>.<span class="me1">wavesArray</span>.<span class="me1">length</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">while</span><span class="br0">&#40;</span> bL<span class="sy0">--</span> <span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">wavesArray</span><span class="br0">&#91;</span> bL <span class="br0">&#93;</span>.<span class="me1">update</span><span class="br0">&#40;</span> <span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; Waves.<span class="me1">globalY</span> <span class="sy0">+=</span> <span class="kw1">this</span>.<span class="me1">move</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span><span class="br0">&#40;</span>Waves.<span class="me1">globalY</span> <span class="sy0">&gt;</span> <span class="br0">&#40;</span>Waves.<span class="me1">height</span> <span class="sy0">/</span> <span class="nu0">2</span><span class="br0">&#41;</span><span class="sy0">-</span><span class="nu0">50</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">move</span> <span class="sy0">=</span> <span class="sy0">-</span><span class="nu0">1</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>Waves.<span class="me1">globalY</span> <span class="sy0">&lt;</span> <span class="sy0">-</span><span class="br0">&#40;</span>Waves.<span class="me1">height</span> <span class="sy0">/</span> <span class="nu0">2</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">move</span> <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; <br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">draw</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">save</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw2">var</span> bL <span class="sy0">=</span> <span class="kw1">this</span>.<span class="me1">wavesArray</span>.<span class="me1">length</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">while</span><span class="br0">&#40;</span> bL<span class="sy0">--</span> <span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">wavesArray</span><span class="br0">&#91;</span> bL <span class="br0">&#93;</span>.<span class="me1">draw</span><span class="br0">&#40;</span> <span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">restore</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<span class="br0">&#125;</span><br />
+<br />
+<span class="kw2">function</span> Wave<span class="br0">&#40;</span> $canvas<span class="sy0">,</span> $y<span class="sy0">,</span> $colour <span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span> <span class="sy0">=</span> $canvas.<span class="me1">getContext</span><span class="br0">&#40;</span> <span class="st0">'2d'</span> <span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">force</span> <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">wavePower</span> <span class="sy0">=</span> <span class="nu0">40</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">count</span> <span class="sy0">=</span> $y<span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">y</span> <span class="sy0">=</span> $y <span class="sy0">+</span> Waves.<span class="me1">globalY</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">alpha</span> <span class="sy0">=</span> <span class="nu0">0.1</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">update</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">y</span> <span class="sy0">=</span> $y <span class="sy0">+</span> Waves.<span class="me1">globalY</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">force</span> <span class="sy0">=</span> Math.<span class="me1">sin</span><span class="br0">&#40;</span><span class="kw1">this</span>.<span class="me1">count</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">count</span> <span class="sy0">+=</span> <span class="nu0">0.05</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; <br />
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">draw</span> <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">fillStyle</span> <span class="sy0">=</span> <span class="st0">&quot;rgba(0, 0, 0, 0.1)&quot;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">fillRect</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span>Waves.<span class="me1">width</span><span class="sy0">,</span>Waves.<span class="me1">height</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">fillStyle</span> <span class="sy0">=</span> <span class="st0">&quot;rgba(&quot;</span><span class="sy0">+</span>$colour<span class="sy0">+</span><span class="st0">&quot;, &quot;</span><span class="sy0">+</span><span class="kw1">this</span>.<span class="me1">alpha</span><span class="sy0">+</span><span class="st0">&quot;)&quot;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">beginPath</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">moveTo</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> <span class="kw1">this</span>.<span class="me1">y</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">quadraticCurveTo</span><span class="br0">&#40;</span>Waves.<span class="me1">width</span> <span class="sy0">/</span> <span class="nu0">4</span><span class="sy0">,</span> <span class="kw1">this</span>.<span class="me1">y</span> <span class="sy0">+</span> <span class="br0">&#40;</span> <span class="kw1">this</span>.<span class="me1">wavePower</span> <span class="sy0">*</span> <span class="kw1">this</span>.<span class="me1">force</span> <span class="br0">&#41;</span><span class="sy0">,</span> Waves.<span class="me1">width</span> <span class="sy0">/</span> <span class="nu0">2</span><span class="sy0">,</span> <span class="kw1">this</span>.<span class="me1">y</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">quadraticCurveTo</span><span class="br0">&#40;</span>Waves.<span class="me1">width</span> <span class="sy0">*</span> <span class="nu0">0.75</span><span class="sy0">,</span> <span class="kw1">this</span>.<span class="me1">y</span> <span class="sy0">-</span> <span class="br0">&#40;</span> <span class="kw1">this</span>.<span class="me1">wavePower</span> <span class="sy0">*</span> <span class="kw1">this</span>.<span class="me1">force</span> <span class="br0">&#41;</span><span class="sy0">,</span> Waves.<span class="me1">width</span><span class="sy0">,</span> <span class="kw1">this</span>.<span class="me1">y</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">lineTo</span><span class="br0">&#40;</span>Waves.<span class="me1">width</span><span class="sy0">,</span> Waves.<span class="me1">height</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">lineTo</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> Waves.<span class="me1">height</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">lineTo</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> <span class="kw1">this</span>.<span class="me1">y</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">closePath</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">ctx</span>.<span class="me1">fill</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+<span class="br0">&#125;</span></div></div>
+<p></code></p>
+<p><span class='st_facebook_hcount' st_title='Canvas Wave' st_url='https://anthonydillon.com/blog/canvas-wave/' displayText='share'></span><span class='st_twitter_hcount' st_title='Canvas Wave' st_url='https://anthonydillon.com/blog/canvas-wave/' displayText='share'></span></p> </div>
+<div class="entry-utility">
+This entry was posted in <a href="../category/blogs/index.html" title="View all posts in Blogs" rel="category tag">Blogs</a>. Bookmark the <a href="../index.html?p=26" title="Permalink to Canvas Wave" rel="bookmark">permalink</a>. </div>
+</div>
+<div id="nav-below" class="navigation">
+<div class="nav-previous"><a href="../index.html?p=18" rel="prev"><span class="meta-nav">&larr;</span> HTML5 Canvas Birds</a></div>
+<div class="nav-next"><a href="../index.html?p=51" rel="next">Performance enhancing tips with jQuery <span class="meta-nav">&rarr;</span></a></div>
+</div>
+<div id="comments">
+<h3 id="comments-title">7 Responses to <em>Canvas Wave</em></h3>
+<ol class="commentlist">
+<li class="comment even thread-even depth-1" id="li-comment-23">
+<div id="comment-23">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/69dcca67831499c204547bc8fecb2bb1?s=40&amp;d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' /> <cite class="fn">Stacey Church</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="../index.html?p=26#comment-23">
+July 27, 2011 at 3:59 pm</a> </div>
+<div class="comment-body"><p>Help, this does not work in IE. </p>
+<p>Any help with any hack to make it work in IE</p>
+</div>
+<div class="reply">
+<a class='comment-reply-link' href='index.html?replytocom=23#respond' onclick='return addComment.moveForm("comment-23", "23", "respond", "26")'>Reply</a> </div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-35">
+<div id="comment-35">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/66b4567f66964fea8540f39a7070808c?s=40&amp;d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' /> <cite class="fn">Adam</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="../index.html?p=26#comment-35">
+August 21, 2011 at 2:00 am</a> </div>
+<div class="comment-body"><p>Great canvas tutorial Anthony. Is it possible to have the canvas transparent but still maintain the wave effect on a background-image? If so how would you go about this?</p>
+<p>Thank You,<br />
+Adam</p>
+</div>
+<div class="reply">
+<a class='comment-reply-link' href='index.html?replytocom=35#respond' onclick='return addComment.moveForm("comment-35", "35", "respond", "26")'>Reply</a> </div>
+</div>
+</li>
+<li class="comment byuser comment-author-anthony-dillon bypostauthor even thread-even depth-1" id="li-comment-47">
+<div id="comment-47">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/8170ec4d4aaaa8d96c2ff7e69c8d5012?s=40&amp;d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' /> <cite class="fn">Anthony Dillon</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="../index.html?p=26#comment-47">
+August 26, 2011 at 2:45 pm</a> </div>
+<div class="comment-body"><p>Hi Adam,</p>
+<p>Yes of course we can have a transparent canvas with background-image showing through. It only needs a few tweaks to the code. The changes you&#8217;ll have to make to the original code are below:</p>
+<p>1. Lets apply a background image to the canvas.<br />
+Change:</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">canvas {<br />
+&nbsp; &nbsp; background-color: black;<br />
+}</div></div>
+<p>To:</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">canvas { <br />
+&nbsp; &nbsp; background:url(canvas-background.jpg) no-repeat;<br />
+}</div></div>
+<p>2. We need to clear the screen with each update to hide the old waves as we draw the new ones.<br />
+Change:</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">this.draw = function(){<br />
+&nbsp; &nbsp; this.ctx.save();<br />
+&nbsp; &nbsp; var bL = this.wavesArray.length;<br />
+&nbsp; &nbsp; while( bL-- ){<br />
+&nbsp; &nbsp; &nbsp; &nbsp; this.wavesArray[ bL ].draw( );<br />
+&nbsp; &nbsp; }<br />
+&nbsp; &nbsp; this.ctx.restore();<br />
+}</div></div>
+<p>To:</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">this.draw = function(){<br />
+&nbsp; &nbsp; this.ctx.clearRect(0,0,this.width,this.height);<br />
+&nbsp; &nbsp; this.ctx.save();<br />
+&nbsp; &nbsp; var bL = this.wavesArray.length;<br />
+&nbsp; &nbsp; while( bL-- ){<br />
+&nbsp; &nbsp; &nbsp; &nbsp; this.wavesArray[ bL ].draw( );<br />
+&nbsp; &nbsp; }<br />
+&nbsp; &nbsp; this.ctx.restore();<br />
+}</div></div>
+<p>3. Each Wave will have to have a dynamic alpha now, so lets send that through to the Wave.<br />
+Change:</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">while(this.numberOfWaves--){<br />
+&nbsp; &nbsp; this.wavesArray.push(new Wave($canvas, this.beginingY, this.colour));<br />
+&nbsp; &nbsp; this.beginingY += this.waveGap;<br />
+}</div></div>
+<p>To:</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">while(this.numberOfWaves--){<br />
+&nbsp; &nbsp; this.wavesArray.push(new Wave($canvas, this.beginingY, this.colour, 1 / this.numberOfWaves));<br />
+&nbsp; &nbsp; this.beginingY += this.waveGap;<br />
+}</div></div>
+<p>4. Now we are sending new parameter to Wave we need to setup Wave to accept it.<br />
+Change:</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">function Wave( $canvas, $y, $colour ){</div></div>
+<p>To:</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">function Wave($canvas, $y, $colour, $alpha ){</div></div>
+<p>5. We need to set the alpha of the wave by simply setting this.alpha with the past parameter $alpha.<br />
+Change:</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">this.alpha = 0.1;</div></div>
+<p>To:</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">this.alpha = $alpha;</div></div>
+<p>6. Finally we need to remove the section that draws a black box over the whole screen with an opacity of 0.1 (10%).<br />
+Change:</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">this.draw = function(){<br />
+&nbsp; &nbsp; this.ctx.fillStyle = &quot;rgba(0, 0, 0, 0.1)&quot;;<br />
+&nbsp; &nbsp; this.ctx.fillRect(0,0,Waves.width,Waves.height);<br />
+&nbsp; &nbsp; this.ctx.fillStyle = &quot;rgba(&quot;+$colour+&quot;, &quot;+this.alpha+&quot;)&quot;;<br />
+&nbsp; &nbsp; this.ctx.beginPath();<br />
+&nbsp; &nbsp; this.ctx.moveTo(0, this.y);<br />
+&nbsp; &nbsp; this.ctx.quadraticCurveTo(Waves.width / 4, this.y + ( this.wavePower * this.force ), Waves.width / 2, this.y);<br />
+&nbsp; &nbsp; this.ctx.quadraticCurveTo(Waves.width * 0.75, this.y - ( this.wavePower * this.force ), Waves.width, this.y);<br />
+&nbsp; &nbsp; this.ctx.lineTo(Waves.width, Waves.height);<br />
+&nbsp; &nbsp; this.ctx.lineTo(0, Waves.height);<br />
+&nbsp; &nbsp; this.ctx.lineTo(0, this.y);<br />
+&nbsp; &nbsp; this.ctx.closePath();<br />
+&nbsp; &nbsp; this.ctx.fill();<br />
+}</div></div>
+<p>To:</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">this.draw = function(){<br />
+&nbsp; &nbsp; this.ctx.fillStyle = &quot;rgba(&quot;+$colour+&quot;, &quot;+this.alpha+&quot;)&quot;;<br />
+&nbsp; &nbsp; this.ctx.beginPath();<br />
+&nbsp; &nbsp; this.ctx.moveTo(0, this.y);<br />
+&nbsp; &nbsp; this.ctx.quadraticCurveTo(Waves.width / 4, this.y + ( this.wavePower * this.force ), Waves.width / 2, this.y);<br />
+&nbsp; &nbsp; this.ctx.quadraticCurveTo(Waves.width * 0.75, this.y - ( this.wavePower * this.force ), Waves.width, this.y);<br />
+&nbsp; &nbsp; this.ctx.lineTo(Waves.width, Waves.height);<br />
+&nbsp; &nbsp; this.ctx.lineTo(0, Waves.height);<br />
+&nbsp; &nbsp; this.ctx.lineTo(0, this.y);<br />
+&nbsp; &nbsp; this.ctx.closePath();<br />
+&nbsp; &nbsp; this.ctx.fill();<br />
+}</div></div>
+<p>There we have it Adam, that should do the trick. Hope this helps and any other problems let me know and I&#8217;ll have a go at solving them.</p>
+<p>Thanks,<br />
+Anthony.</p>
+</div>
+<div class="reply">
+<a class='comment-reply-link' href='index.html?replytocom=47#respond' onclick='return addComment.moveForm("comment-47", "47", "respond", "26")'>Reply</a> </div>
+</div>
+</li>
+<li class="comment byuser comment-author-anthony-dillon bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-48">
+<div id="comment-48">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/8170ec4d4aaaa8d96c2ff7e69c8d5012?s=40&amp;d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' /> <cite class="fn">Anthony Dillon</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="../index.html?p=26#comment-48">
+August 26, 2011 at 11:59 pm</a> </div>
+<div class="comment-body"><p>Stacey, It depends which IE you are using? You need IE9+. You could also use Chrome or Firefox to view canvas elements.</p>
+</div>
+<div class="reply">
+<a class='comment-reply-link' href='index.html?replytocom=48#respond' onclick='return addComment.moveForm("comment-48", "48", "respond", "26")'>Reply</a> </div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-416">
+<div id="comment-416">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/81e8b4c762118b1779d195254410d177?s=40&amp;d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' /> <cite class="fn">Jason Meller</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="../index.html?p=26#comment-416">
+July 15, 2012 at 4:55 am</a> </div>
+<div class="comment-body"><p>how do you get the waves to come in from the top?</p>
+</div>
+<div class="reply">
+<a class='comment-reply-link' href='index.html?replytocom=416#respond' onclick='return addComment.moveForm("comment-416", "416", "respond", "26")'>Reply</a> </div>
+</div>
+</li>
+<li class="comment byuser comment-author-anthony-dillon bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-417">
+<div id="comment-417">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/8170ec4d4aaaa8d96c2ff7e69c8d5012?s=40&amp;d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' /> <cite class="fn">Anthony Dillon</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="../index.html?p=26#comment-417">
+July 16, 2012 at 10:38 am</a> </div>
+<div class="comment-body"><p>Hi Jason, </p>
+<p>In the update function I increase or decrease the globalY varible based on the location of the waves:</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">Waves.globalY += this.move;<br />
+if(Waves.globalY &gt; (Waves.height / 2)-50){<br />
+&nbsp; &nbsp; this.move = -1;<br />
+}else if(Waves.globalY &lt; -(Waves.height / 2)){<br />
+&nbsp; &nbsp; this.move = 1;<br />
+}</div></div>
+</div>
+<div class="reply">
+<a class='comment-reply-link' href='index.html?replytocom=417#respond' onclick='return addComment.moveForm("comment-417", "417", "respond", "26")'>Reply</a> </div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-967">
+<div id="comment-967">
+<div class="comment-author vcard">
+ <img alt='' src='https://secure.gravatar.com/avatar/931b8fa9f9f4639959999b6f4a0cd4c9?s=40&amp;d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' /> <cite class="fn">Lars</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="../index.html?p=26#comment-967">
+February 13, 2014 at 5:01 pm</a> </div>
+<div class="comment-body"><p>one wave is not displayed, you should write :</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">this.wavesArray.push(new Wave($canvas, this.beginingY, this.colour, 1/(this.numberOfWaves+1)));</div></div>
+</div>
+<div class="reply">
+<a class='comment-reply-link' href='index.html?replytocom=967#respond' onclick='return addComment.moveForm("comment-967", "967", "respond", "26")'>Reply</a> </div>
+</div>
+</li>
+</ol>
+<div id="respond">
+<h3 id="reply-title">Leave a Reply to <a href="index.html?replytocom=47#comment-47">Anthony Dillon</a> <small><a rel="nofollow" id="cancel-comment-reply-link" href="../index.html?p=26#respond">Cancel reply</a></small></h3>
+<form action="https://anthonydillon.com/blog/wp-comments-post.php" method="post" id="commentform">
+<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p> <p class="comment-form-author"><label for="author">Name</label> <span class="required">*</span><input id="author" name="author" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-email"><label for="email">Email</label> <span class="required">*</span><input id="email" name="email" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-url"><label for="url">Website</label><input id="url" name="url" type="text" value="" size="30" /></p>
+<p class="comment-form-comment"><label for="comment">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p> <p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code></p> <p class="form-submit">
+<input name="submit" type="submit" id="submit" value="Post Comment" />
+<input type='hidden' name='comment_post_ID' value='26' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='47' />
+</p>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="20a0bab151" /></p> </form>
+</div>
+</div>
+</div>
+</div>
+<div id="primary" class="widget-area" role="complementary">
+<ul class="xoxo">
+<li id="recent-posts-2" class="widget-container widget_recent_entries"> <h3 class="widget-title">Recent Posts</h3> <ul>
+<li><a href="../index.html?p=105" title="Surprising CSS selectors you can use today">Surprising CSS selectors you can use today</a></li>
+<li><a href="../index.html?p=103" title="Ant.FM">Ant.FM</a></li>
+<li><a href="../index.html?p=90" title="Always show the time on Moto360">Always show the time on Moto360</a></li>
+<li><a href="../index.html?p=84" title="Handling &#8220;class&#8221; attribute in Beautifulsoup">Handling &#8220;class&#8221; attribute in Beautifulsoup</a></li>
+<li><a href="../index.html?p=78" title="Using Modernizr with Opera Mini">Using Modernizr with Opera Mini</a></li>
+</ul>
+</li><li id="linkcat-2" class="widget-container widget_links"><h3 class="widget-title">Friends</h3>
+<ul class='xoxo blogroll'>
+<li><a href="http://naobrown.com/">Glyn Dillon</a></li>
+<li><a href="http://www.rekim.com/">Mike Robinson</a></li>
+<li><a href="http://www.timwatkins.uk.com/">Tim Watkins</a></li>
+<li><a href="http://zulu-studios.com/">Zulu Studios</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="footer">
+<div id="wrapper">
+<img src="../../images/footer_logo.jpg" />
+<p>&copy; 2021 ANTHONY DILLON</p>
+</div>
+</div>
+
+</div>
+</body>
+</html>

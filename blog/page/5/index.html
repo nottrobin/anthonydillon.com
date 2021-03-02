@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<link rel="shortcut icon" href="../../../favicon.png">
+<title>Anthony Dillon | Blog | Page 5</title>
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="https://anthonydillon.com/blog/wp-content/themes/anthonydillon/style.css" />
+<link rel="pingback" href="../../xmlrpc.php" />
+<link rel="alternate" type="application/rss+xml" title="Anthony Dillon | Blog &raquo; Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Anthony Dillon | Blog &raquo; Comments Feed" href="../../comments/feed/index.html" />
+<link rel='stylesheet' id='codecolorer-css' href='../../wp-content/plugins/codecolorer/codecolorer.css?ver=0.9.9' type='text/css' media='screen' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" />
+<link rel='index' title='Anthony Dillon | Blog' href='../../../blog' />
+<meta name="generator" content="WordPress 3.1.2" />
+<script charset="utf-8" type="text/javascript">var switchTo5x=true;</script><script charset="utf-8" type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'wp.41f99cd0-9d6f-436c-927c-3e06fc865300'});var st_type='wordpress3.1.2';</script> <script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23286488-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+</head>
+<body class="home blog paged paged-5">
+<div id="my-header">
+<div id="wrapper" class="hfeed">
+<div id="header-right">
+<a href="../../../cdn-cgi/l/email-protection#fb969ebb9a958f939495829f9297979495d5989496"><span class="__cf_email__" data-cfemail="ce838b8e8f809a868180978a8782828180e08d8183">[email&#160;protected]</span></a>
+<a href="https://twitter.com/anthonydillon" class="twitter_tab"><img src="../../../images/follow_me_tab.png" border="0"></a>
+</div>
+<nav>
+<a href="../../../index.html">HOME</span>
+<a href="../../../index.html#work">MY WORK</a>
+<a href="../../../index.html#contact">GET IN TOUCH</a>
+<a href="../../../blog">BLOG</a>
+</nav>
+<div class="myLogo">
+<img src="../../../images/ad_logo.jpg" />
+</div>
+</div>
+</div>
+<div id="main">
+<div id="container">
+<div id="content" role="main">
+<div id="nav-above" class="navigation">
+<div class="nav-previous"><a href="../6/index.html"><span class="meta-nav">&larr;</span> Older posts</a></div>
+<div class="nav-next"><a href="../4/index.html">Newer posts <span class="meta-nav">&rarr;</span></a></div>
+</div>
+<div id="post-51" class="post-51 post type-post status-publish format-standard hentry category-blogs">
+<h2 class="entry-title"><a href="../../index.html?p=51" title="Permalink to Performance enhancing tips with jQuery" rel="bookmark">Performance enhancing tips with jQuery</a></h2>
+<div class="entry-meta">
+<span class="meta-prep meta-prep-author">Posted on</span> <a href="../../index.html?p=51" title="8:29 am" rel="bookmark"><span class="entry-date">April 30, 2012</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="../../author/anthony-dillon/index.html" title="View all posts by Anthony Dillon">Anthony Dillon</a></span> </div>
+<div class="entry-content">
+<p>I have used jQuery quite a lot recently and have picked up some good practice&#8217;s and dropped some bad habits, so I thought I&#8217;d share what I have learnt, it&#8217;s not ground-breaking but simply performance enhancing tips.</p>
+<h2>Loading jQuery</h2>
+<p>Using Google Code to load jQuery gives you a several advantages over saving it locally to your server. The most important factor is that the library is probably already cached on the clients machine. If not this is not the case, it&#8217;s fast to download from Google&#8217;s CDN and saves on your own bandwidth:</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</div></div>
+<h2>Selection</h2>
+<p>To begin with I used this syntax to select elements on the DOM:</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">$('#parent .child');</div></div>
+<p>Then I discovered that the find method is up to 70% faster. So use this method where possible:</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">$('#parent').find('.child');</div></div>
+<h2>Chaining</h2>
+<p>jQuery allows you to chain your functions, which helps you cut down on your selector use too:</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">$('#parent').find('.child').removeClass('off').addClass('on');</div></div>
+<h2>Caching</h2>
+<p>Try and keep your selectors to a minimum by storing regularly accessed elements in variables. You should just select it once and keep the selection in memory by storing it in a variable for access:</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">var &nbsp;cachedElement = $('#element');<br />
+for(i = 0; i &lt; 1000; i++){<br />
+&nbsp; cachedElement.append('Index: ' + i);<br />
+}</div></div>
+<h2>Cheat Sheet</h2>
+<p>I recommend having a cheat sheet close at hand whatever language you are using:<br />
+<a href="../../wp-content/uploads/2012/04/jQuery-17-Visual-Cheat-Sheet1.pdf">Download jQuery 1.7 Visual Cheat Sheet</a></p>
+<p>Hope this helps you improve you jQuery.</p>
+<p><span class='st_facebook_hcount' st_title='Performance enhancing tips with jQuery' st_url='https://anthonydillon.com/blog/performance-enhancing-tips-with-jquery/' displayText='share'></span><span class='st_twitter_hcount' st_title='Performance enhancing tips with jQuery' st_url='https://anthonydillon.com/blog/performance-enhancing-tips-with-jquery/' displayText='share'></span></p> </div>
+<div class="entry-utility">
+<span class="cat-links">
+<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="../../category/blogs/index.html" title="View all posts in Blogs" rel="category tag">Blogs</a> </span>
+<span class="meta-sep">|</span>
+<span class="comments-link"><a href="../../index.html?p=51#respond" title="Comment on Performance enhancing tips with jQuery">Leave a comment</a></span>
+</div>
+</div>
+<div id="post-26" class="post-26 post type-post status-publish format-standard hentry category-blogs">
+<h2 class="entry-title"><a href="../../index.html?p=26" title="Permalink to Canvas Wave" rel="bookmark">Canvas Wave</a></h2>
+<div class="entry-meta">
+<span class="meta-prep meta-prep-author">Posted on</span> <a href="../../index.html?p=26" title="1:33 pm" rel="bookmark"><span class="entry-date">May 19, 2011</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="../../author/anthony-dillon/index.html" title="View all posts by Anthony Dillon">Anthony Dillon</a></span> </div>
+<div class="entry-content">
+<p>While toying around with the drawing aspect of canvas I started using Quadratic Curve’s to make a line bob up and down. Putting them side by side in reverse, mimicked a line waving.By creating more than one and placing them on top of each other it replicated a waving ocean.<br />
+<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../../../demos/waves/waves.js" type="text/javascript"></script><script>
+	var canvas = null;
+	var waves = null;
+	function loadCanvas( ) {
+		canvas = document.getElementById( 'canvas' );
+		waves = new Waves( canvas,660,417 );
+		setInterval( "run()", 80 );
+	}
+	function run(){
+		waves.update( );
+		waves.draw( );
+	}
+	window.addEventListener( 'load', loadCanvas, false );
+</script><br />
+<canvas id="canvas" width="660" height="417" style="background-color: black;"></canvas></p>
+<p>Full Tutorial &#8211; Continue to read&#8230;<br />
+<a href="../../index.html?p=26#more-26" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+<p><span class='st_facebook_hcount' st_title='Canvas Wave' st_url='https://anthonydillon.com/blog/canvas-wave/' displayText='share'></span><span class='st_twitter_hcount' st_title='Canvas Wave' st_url='https://anthonydillon.com/blog/canvas-wave/' displayText='share'></span></p> </div>
+<div class="entry-utility">
+<span class="cat-links">
+<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="../../category/blogs/index.html" title="View all posts in Blogs" rel="category tag">Blogs</a> </span>
+<span class="meta-sep">|</span>
+<span class="comments-link"><a href="../../index.html?p=26#comments" title="Comment on Canvas Wave">7 Comments</a></span>
+</div>
+</div>
+<div id="nav-below" class="navigation">
+<div class="nav-previous"><a href="../6/index.html"><span class="meta-nav">&larr;</span> Older posts</a></div>
+<div class="nav-next"><a href="../4/index.html">Newer posts <span class="meta-nav">&rarr;</span></a></div>
+</div>
+</div>
+</div>
+<div id="primary" class="widget-area" role="complementary">
+<ul class="xoxo">
+<li id="recent-posts-2" class="widget-container widget_recent_entries"> <h3 class="widget-title">Recent Posts</h3> <ul>
+<li><a href="../../index.html?p=105" title="Surprising CSS selectors you can use today">Surprising CSS selectors you can use today</a></li>
+<li><a href="../../index.html?p=103" title="Ant.FM">Ant.FM</a></li>
+<li><a href="../../index.html?p=90" title="Always show the time on Moto360">Always show the time on Moto360</a></li>
+<li><a href="../../index.html?p=84" title="Handling &#8220;class&#8221; attribute in Beautifulsoup">Handling &#8220;class&#8221; attribute in Beautifulsoup</a></li>
+<li><a href="../../index.html?p=78" title="Using Modernizr with Opera Mini">Using Modernizr with Opera Mini</a></li>
+</ul>
+</li><li id="linkcat-2" class="widget-container widget_links"><h3 class="widget-title">Friends</h3>
+<ul class='xoxo blogroll'>
+<li><a href="http://naobrown.com/">Glyn Dillon</a></li>
+<li><a href="http://www.rekim.com/">Mike Robinson</a></li>
+<li><a href="http://www.timwatkins.uk.com/">Tim Watkins</a></li>
+<li><a href="http://zulu-studios.com/">Zulu Studios</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="footer">
+<div id="wrapper">
+<img src="../../../images/footer_logo.jpg" />
+<p>&copy; 2021 ANTHONY DILLON</p>
+</div>
+</div>
+
+</div>
+</body>
+</html>
