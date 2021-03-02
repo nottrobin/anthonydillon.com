@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Design Patterns in JavaScript Presentation</title>
+<meta name="description" content="HTML5 presentation on design patterns in JavaScript">
+<meta name="author" content="Anthony Dillon">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic" rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://anthonydillon.com/demos/design-patterns-in-javascript/css/main.css">
+<link rel="stylesheet" href="https://anthonydillon.com/demos/design-patterns-in-javascript/css/default.css">
+<link rel="stylesheet" href="https://anthonydillon.com/demos/design-patterns-in-javascript/css/zenburn.css">
+<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+<body>
+<div class="reveal">
+
+<div class="state-background"></div>
+
+<div class="slides">
+<section>
+<h1>Design Patterns in JavaScript</h1>
+</section>
+<section>
+<h2>Introduction</h2>
+<p>Design patterns are reusable solutions to a specific problem. Over the many years practicing software development, experts have figured out ways of solving similar problems.</p>
+<p>
+<i><small>- <a href="http://www.anthonydillon.com">Anthony Dillon</a> / <a href="https://twitter.com/anthonydillon">@anthonydillon</a></small></i>
+</p>
+</section>
+
+<section>
+<section>
+<h2>Type of Design Patterns</h2>
+<ul>
+<li><strong>Creational</strong> patterns focus on ways to create objects or classes.</li>
+<li><strong>Structural</strong> design patterns focus on ways to manage relationships between objects so that your application is architected in a scalable way</li>
+<li><strong>Behavioural</strong> patterns focus on communication between objects</li>
+</ul>
+</section>
+</section>
+<section>
+<h2>Data Types in JavaScript</h2>
+<p>You may hear references to classes and objects in this presentation, but as JavaScript doesn't really have the construct of "class", think of it as a "data type"</p>
+<p>JavaScript is an object-orientated language where the inheritance comes from the concept of prototype functions.</p>
+</section>
+<section>
+<h2>Simple Car Data Type</h2>
+<pre><code>
+	function Car($config) {
+	    this.make = $config.make;
+	    this.colour = $config.colour;  
+	}  
+	  
+	Car.prototype.getColour = function() {  
+	    return this.colour;  
+	};  
+	  
+	var myCar = new Car({make:"Honda", colour:"Black" });  
+	console.log(myCar.getColour()); // outputs Black
+					</code></pre>
+<p class="fragment">Since multiple Car objects will reference the same prototype this allows the getColour() method to be shared by all instances of the Car data type</p>
+</section>
+<section>
+<h2>Creational Design Patterns</h2>
+<p>We are going to focus on two creational design patterns here:</p>
+<ul>
+<li>Builder pattern</li>
+<li>Prototype pattern</li>
+</ul>
+</section>
+<section>
+<h2>Builder Pattern</h2>
+<p>Applying the builder pattern allows us to construct objects by only specifying the type and the content of the object. We don't have to explicitly create the object. </p>
+<p>You have probably used the Builder Pattern before without realising it.</p>
+<pre><code>
+						var myDiv = $('&lt;div id="myDiv"&gt;This is a div.&lt;/div&gt;');
+					</code></pre>
+</section>
+<section>
+<h2>Prototype Pattern</h2>
+<p>The prototype pattern is a pattern where objects are created based on a template of an existing object through cloning. </p>
+<pre><code>
+	var Car = {  
+	    make: "Honda",
+	    colour: "Black"  
+	};  
+	    
+	var myCar = Object.create(Car);  
+	  
+	console.log(myCar.colour); //outputs Black 
+	myCar.colour = "Blue";  
+	console.log(myCar.colour) //outputs Blue
+					</code></pre>
+</section>
+<section>
+<section>
+<h2>Structural Design Patterns</h2>
+<p>Structural design patterns are really helpful when figuring out how a system should work. They allow our applications to scale easily and remain maintainable.</p>
+<p>Lets look at a couple of examples:</p>
+<ul>
+<li>Composite pattern</li>
+<li>Facade pattern</li>
+</ul>
+</section>
+</section>
+<section>
+<h2>Composite Pattern</h2>
+<p>The composite pattern says that a group of objects can be treated in the same manner as an individual object of the group.</p>
+<pre><code>
+	$('.myList').addClass('selected');  
+	$('#myItem').addClass('selected');  
+						</code></pre>
+<p class="fragment">Since the composite pattern uses the same API for both, we can often mistake one for the other and end up with unexpected bugs. This is why YUI, offer two seperate methods of getting elements (Y.one() vs Y.all()). </p>
+</section>
+<section>
+<h2>Facade Pattern</h2>
+<p>The Facade Pattern provides the user with a simple interface, while hiding it's underlying complexity. </p>
+<pre><code>
+	$(document).ready(function() {
+	    //all your code goes here...  
+	}); 
+					</code></pre>
+<p>A facade pattern normalizes browser inconsistencies to ensure that you get expected behaviour across all vendors and versions.</p>
+</section>
+<section>
+<h2>Under the ready() hood</h2>
+<pre><code style="font-size:17px;">
+ready: (function() {  
+    ...  
+    //Mozilla, Opera, and Webkit  
+    if (document.addEventListener) {  
+        document.addEventListener("DOMContentLoaded", idempotent_fn, false);  
+        ...  
+    }  
+    //IE event model  
+    else if (document.attachEvent) {  
+        // ensure firing before onload; maybe late but safe also for iframes  
+        document.attachEvent("onreadystatechange", idempotent_fn);  
+        // A fallback to window.onload, that will always work  
+        window.attachEvent("onload", idempotent_fn);  
+        ...       
+    }  
+})
+					</code></pre>
+</section>
+<section>
+<h2>Behavioural Design Patterns</h2>
+<p>Behavioural patterns describe different methods of connecting communication between objects. The two methods we will be looking at today are:</p>
+<ul>
+<li>Observer pattern</li>
+<li>Mediator pattern</li>
+</ul>
+</section>
+<section>
+<h2>Observer Pattern</h2>
+<p>In the Observer Pattern, the subject keeps a list of observers, the subject notifies the observers when something interesting happens. A subject can also remove an observer from the list.</p>
+<ul>
+<li class="fragment">publish(data)</li>
+<li class="fragment">subscribe(observer)</li>
+<li class="fragment">unsubscribe(observer)</li>
+</ul>
+</section>
+<section>
+<h2>Observer in the wild</h2>
+<pre><code>
+	var o = $( {} );  
+	$.subscribe = o.on.bind(o);  
+	$.unsubscribe = o.off.bind(o);  
+	$.publish = o.trigger.bind(o);  
+	
+	document.on( 'tweetsReceived', function(tweets) {
+	    $.publish('tweetsShow', tweets); 
+	}); 
+	
+	$.subscribe( 'tweetsShow', function() {
+	    .. 
+	    $.publish('tweetsDisplayed);  
+	});  
+	  
+	$.subscribe('tweetsDisplayed', function() {  
+	    ...  
+	});  
+					</code></pre>
+</section>
+<section>
+<h2>Mediator Pattern</h2>
+<p>The Mediator Pattern promotes the use of a single shared subject that handles communication with multiple objects. All objects communicate with each other through the mediator.</p>
+<p class="fragment">The benefit of this pattern over the Observer pattern is that a single object is responsible for communication, whereas in the observer pattern, multiple objects could be listening and subscribing to each other.</p>
+</section>
+<section>
+<h2>Lets check out the code</h2>
+<pre><code style="font-size: 18px;">
+$('#album').on('click', function(e) {  
+    e.preventDefault();  
+    var albumId = $(this).id();  
+    mediator.publish("playAlbum", albumId);  
+});  
+var playAlbum = function(id) {
+    mediator.publish("albumStartedPlaying", {currentSong: "Without You"});  
+};  
+var logAlbumPlayed = function(id) {  
+    //Log the album in the backend  
+};  
+var updateUserInterface = function(album) {  
+    //Update UI to reflect what's being played  
+};
+mediator.subscribe("playAlbum", playAlbum);  
+mediator.subscribe("playAlbum", logAlbumPlayed);  
+mediator.subscribe("albumStartedPlaying", updateUserInterface); 
+					</code></pre>
+</section>
+<section>
+<h2>In conclusion</h2>
+<p>The best thing about design patterns is you dont have to tackle common problems as someone has already applied it successfully in the past.</p>
+<blockquote>The average number of lines an amateur writes before the code becomes unmanageable is: 1500... ish</blockquote>
+</section>
+<section data-state="end">
+<h1>THE END</h1>
+<h3>by Ant / anthonydillon.com</h3>
+<p>Further reading: <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/">Learning JavaScript Design Patterns</a></p>
+</section>
+</div>
+
+<aside class="controls">
+<a class="left" href="design-patterns-in-javascript#">&#x25C4;</a>
+<a class="right" href="design-patterns-in-javascript#">&#x25BA;</a>
+<a class="up" href="design-patterns-in-javascript#">&#x25B2;</a>
+<a class="down" href="design-patterns-in-javascript#">&#x25BC;</a>
+</aside>
+
+<div class="progress"><span></span></div>
+</div>
+<script src="https://anthonydillon.com/demos/design-patterns-in-javascript/js/head.min.js"></script>
+<script src="https://anthonydillon.com/demos/design-patterns-in-javascript/js/reveal.min.js"></script>
+<script>
+			
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+					{ src: 'js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'js/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+					{ src: 'js/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+				]
+			});
+			
+		</script>
+</body>
+</html>

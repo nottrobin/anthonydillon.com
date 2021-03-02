@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<link rel="shortcut icon" href="../favicon.png">
+<title>Surprising CSS selectors you can use today | Anthony Dillon | Blog</title>
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="https://anthonydillon.com/blog/wp-content/themes/anthonydillon/style.css" />
+<link rel="pingback" href="xmlrpc.php" />
+<link rel="alternate" type="application/rss+xml" title="Anthony Dillon | Blog &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Anthony Dillon | Blog &raquo; Comments Feed" href="comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Anthony Dillon | Blog &raquo; Surprising CSS selectors you can use today Comments Feed" href="surprising-css-selectors-you-can-use-today/feed/index.html" />
+<link rel='stylesheet' id='codecolorer-css' href='wp-content/plugins/codecolorer/codecolorer.css?ver=0.9.9' type='text/css' media='screen' />
+<script type='text/javascript' src='wp-includes/js/l10n.js?ver=20101110'></script>
+<script type='text/javascript' src='wp-includes/js/comment-reply.js?ver=20090102'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" />
+<link rel='index' title='Anthony Dillon | Blog' href='../blog' />
+<link rel='start' title='Finally done my website!' href='index.html' />
+<link rel='prev' title='Ant.FM' href='index.html-103.html' />
+<meta name="generator" content="WordPress 3.1.2" />
+<link rel='canonical' href='index.html-105.html' />
+<link rel='shortlink' href='index.html-105.html' />
+<script charset="utf-8" type="text/javascript">var switchTo5x=true;</script><script charset="utf-8" type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'wp.41f99cd0-9d6f-436c-927c-3e06fc865300'});var st_type='wordpress3.1.2';</script> <script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23286488-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+</head>
+<body class="single single-post postid-105 single-format-standard">
+<div id="my-header">
+<div id="wrapper" class="hfeed">
+<div id="header-right">
+<a href="../cdn-cgi/l/email-protection#e8858da889869c808786918c8184848786c68b8785"><span class="__cf_email__" data-cfemail="014c4441404f55494e4f5845484d4d4e4f2f424e4c">[email&#160;protected]</span></a>
+<a href="https://twitter.com/anthonydillon" class="twitter_tab"><img src="../images/follow_me_tab.png" border="0"></a>
+</div>
+<nav>
+<a href="../index.html">HOME</span>
+<a href="../index.html#work">MY WORK</a>
+<a href="../index.html#contact">GET IN TOUCH</a>
+<a href="../blog">BLOG</a>
+</nav>
+<div class="myLogo">
+<img src="../images/ad_logo.jpg" />
+</div>
+</div>
+</div>
+<div id="main">
+<div id="container">
+<div id="content" role="main">
+<div id="nav-above" class="navigation">
+<div class="nav-previous"><a href="index.html-103.html" rel="prev"><span class="meta-nav">&larr;</span> Ant.FM</a></div>
+<div class="nav-next"></div>
+</div>
+<div id="post-105" class="post-105 post type-post status-publish format-standard hentry category-blogs">
+<h1 class="entry-title">Surprising CSS selectors you can use today</h1>
+<div class="entry-meta">
+ <span class="meta-prep meta-prep-author">Posted on</span> <a href="index.html-105.html" title="9:59 am" rel="bookmark"><span class="entry-date">November 18, 2020</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="author/anthony-dillon/index.html" title="View all posts by Anthony Dillon">Anthony Dillon</a></span> </div>
+<div class="entry-content">
+<div class="description entry-content">
+<p><strong>As of date of writing which was 2016.</strong></p>
+<p>While working on the <a href="https://github.com/juju/juju-gui">Juju GUI project</a>, I was reviewing a pull request when I spotted there were no prefixes on box-sizing. I thought I should check if they needed it before asking the requester to add them. In doing so I was surprised to find that there are a lot more CSS features with global support than I originally thought. So I trawled through the chasms of <a href="https://caniuse.com/">Can I use</a> and have come out with some gems to share.</p>
+<h2>filter: sepia(1); – 78% browser support</h2>
+<p>CSS filter effects can be used to apply effects like blur, grayscale, brightness, contrast and hue. I remember a few years ago I was asked to create a blur effect as an element that overlays the page content. CSS was no help as none of the browsers supported blur. So I went on a dirty hacking weekend where I set the text to transparent, added a text shadow and used JavaScript to replace all the images with a blurred version. This worked, but I needed a shower afterwards.</p>
+<p>I was shocked to spot that today browser support is 78%, including full support for all browsers apart from Edge, IE and Opera Mini. So I could have just used the following:</p>
+<pre class=" language-css"><div class="codecolorer-container text default  language-css" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">&lt;span class=&quot;token selector&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; -webkit-filter .5s&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;-webkit-filter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;blur&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;<br />
+<br />
+&lt;span class=&quot;token selector&quot;&gt;.overlay-active img&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;-webkit-filter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;blur&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;1&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;</div></div>
+</pre>
+<p>So while this doesn’t cover all bases; it’s enough to let us drop the dirty hacks and use <a href="https://en.m.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a> instead. After all, it’s not the end of the world if IE users see a simple alpha transparent overlay instead of a blurred version.</p>
+<p>See <a href="https://caniuse.com/#feat=css-filters">http://caniuse.com/#feat=css-filters</a> (WebKit prefix)</p>
+<h2>CSS3 selectors – 97.73% browser support</h2>
+<p>CSS3 selectors dawned a new era of capabilities in CSS, giving us a bunch of new methods to select with logic. The more interesting selectors are explained below.</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">[foo^=&quot;bar&quot;]</div></div>
+<p>, the carat symbol is used as a regular expression to select attributes starting with</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">bar</div></div>
+<p>in this case. A simple example of this features usage is:</p>
+<pre class=" language-css"><div class="codecolorer-container text default  language-css" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">&lt;span class=&quot;token selector&quot;&gt;a[href^=&quot;http&quot;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;<br />
+&nbsp; &nbsp;&lt;span class=&quot;token property&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token url&quot;&gt;url(external-icon.svg)&lt;/span&gt; no-repeat&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&nbsp; &nbsp;&lt;span class=&quot;token property&quot;&gt;padding-left&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 10px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;</div></div>
+</pre>
+<p>Here we are selecting all the links that link to an external site and adding a small external icon to it automatically.</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">[foo$=&quot;bar&quot;]</div></div>
+<p>, similarly this regular expression symbol refers to matching end of string.</p>
+<pre class=" language-css"><div class="codecolorer-container text default  language-css" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">&lt;span class=&quot;token selector&quot;&gt;a[href$=”.pdf”]:after&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; “&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;PDF&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;”&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;</div></div>
+</pre>
+<p>This example demonstrates selecting a link that is linking to a PDF file and appending a notice to give the use an understanding of the expected behaviour.</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">:nth-child()</div></div>
+<p>, selects elements based on the occurrence of the elements. For example:</p>
+<pre class=" language-css"><div class="codecolorer-container text default  language-css" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">&lt;span class=&quot;token selector&quot;&gt;li:nth-child(n2)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; light-grey&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;</div></div>
+</pre>
+<p>This example will select the every second element and apply a light grey background to it. You can also use (odd) in this case but I wanted to show the nth usage.</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">:empty</div></div>
+<p>, This selector will select any element that containing nothing including HTML comments.</p>
+<p>Will match:</p>
+<pre class=" language-markup"><div class="codecolorer-container text default  language-markup" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;</div></div>
+</pre>
+<p>Won’t match:</p>
+<pre class=" language-markup"><div class="codecolorer-container text default  language-markup" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;</div></div>
+</pre>
+<p>The</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">:empty</div></div>
+<p>pseudo selector is useful for hiding empty elements that can cause spacing as they have padding. It can also hide the border of an empty list item.</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">:not()</div></div>
+<p>, is a negative selector. It takes an element selector as a parameter. If the match is false then styles are applied.</p>
+<pre class=" language-css"><div class="codecolorer-container text default  language-css" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">&lt;span class=&quot;token selector&quot;&gt;.menu:not(.is-hidden)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;<br />
+&nbsp; // menu styles<br />
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;</div></div>
+</pre>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">foo ~ bar</div></div>
+<p>, is a sibling combinator. Which works similarly to</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">foo + bar</div></div>
+<p>but is less strict. The + method will only select the first bar inside foo. Whereas the ~ select will select all bars only if it is preceded by a foo.</p>
+<pre class=" language-css"><div class="codecolorer-container text default  language-css" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">&lt;span class=&quot;token selector&quot;&gt;h2 ~ p&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;margin-top&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1em&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;</div></div>
+</pre>
+<p>You may have been under the impression, as I was, that these selectors were not well supported. Perhaps you thought either that you could not use them, or would require some thought into a polyfill or progressive enhancement trick to use them. However, I was surprised to discover that CSS3 selectors have 97.73% global support, including IE8 and up.</p>
+<p>See <a href="https://caniuse.com/#feat=css-sel3">http://caniuse.com/#feat=css-sel3</a></p>
+<h2>Calc() – 80.75% browser support</h2>
+<p>This is one of my favourite new features to CSS.</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">Calc()</div></div>
+<p>gives users the ability to perform mathematical calculations using different units within CSS. For example, positioning a background icon to the right of a input field.</p>
+<p>We have all been there, you add a background and position the icon to</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">right center</div></div>
+<p>. Dust your hands, job done. You show the design and they ask for the icon to be 10px from the right of the element. Damn, its a background and you don’t want to create a new element just for a little icon. So you set the background position to</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">90% center</div></div>
+<p>. This falls over at different viewport sizes. Calc to the rescue!</p>
+<pre class=" language-css"><div class="codecolorer-container text default  language-css" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">&lt;span class=&quot;token selector&quot;&gt;.search-field&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;background-position&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;100% - 10px&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; center&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&nbsp; …<br />
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;</div></div>
+</pre>
+<p>That will do nicely. Also if you wanted a floating sidebar to fill up the entire height of the screen, apart from the header, you could use:</p>
+<pre class=" language-css"><div class="codecolorer-container text default  language-css" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">&lt;span class=&quot;token selector&quot;&gt;.sidebar&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;100% - 50px&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;<br />
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;</div></div>
+</pre>
+<p>With a nice healthy 80.75% global support and no browser prefixes required, it’s time to add this to your arsenal of selectors.</p>
+<p>See <a href="https://caniuse.com/#feat=calc">http://caniuse.com/#feat=calc</a></p>
+<h2>CSS animation – 90.29% browser support</h2>
+<p>Ever since the death of Flash we have been looking for a replacement to animation on the web, luckily CSS animations became available very quickly after. As with all new features I was curious, but resistant to use in production without carefully considering an appropriate fallback.</p>
+<p>These days, CSS animations boast a healthy 90.29% support with a ‘-webkit’ prefix. This means there is no reason not to add some small usability aids to your UI components, such as animating a notification into view to grab the user’s attention.</p>
+<p>If you want to bring your site or web app to life by adding some subtle animation. You could add some motion to the introduction of the notification, using the following simple example.</p>
+<pre class=" language-css"><div class="codecolorer-container text default  language-css" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">&lt;span class=&quot;token selector&quot;&gt;.notification-open&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;-webkit-animation&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; dropDown .6s&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;-webkit-animation-fill-mode&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; forwards&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;-webkit-animation-timing-function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ease-in-out&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;animation&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; dropDown .6s&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;animation-fill-mode&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; forwards&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;animation-timing-function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ease-in-out&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;<br />
+<br />
+&lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@-webkit-keyframes&lt;/span&gt; dropDown&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token selector&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;-webkit-transform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;0,-100px&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token selector&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;-webkit-transform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;0,25px&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;<br />
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;<br />
+<br />
+&lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@keyframes&lt;/span&gt; dropDown&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token selector&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;-webkit-transform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;0,-100px&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token selector&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;-webkit-transform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;0,25px&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;<br />
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;</div></div>
+</pre>
+<p><strong>Pro tip</strong>: Do not animate a positional style such as</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">top</div></div>
+<p>and</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">margin</div></div>
+<p>. This will cause a page repaint and in some cases require the browser to calculate the positions of the visible elements which cause</p>
+<p>See <a href="https://caniuse.com/#feat=css-animation">http://caniuse.com/#feat=css-animation</a></p>
+<h2>@supports rule – 67.85% browser support</h2>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">@supports</div></div>
+<p>gives us the ability to check if a feature is supported and conditionally style elements based on the browser’s functionality. For example, you can use supports to detect if flexbox is supported by that particular browser and if not swap back to floats.</p>
+<pre class=" language-css"><div class="codecolorer-container text default  language-css" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">&lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@supports&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flex&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token selector&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flex&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;<br />
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;<br />
+<br />
+&lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@supports&lt;/span&gt; not &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flex&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token selector&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; left&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;<br />
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;</div></div>
+</pre>
+<p>Pairing</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">@supports</div></div>
+<p>with the not keyword allows for any type of logic within your CSS.</p>
+<p>One of the gotchas with this feature is most of the time we want to test an older browser for new feature support. The older browser itself will not support this type of query.</p>
+<p>At the moment feature queries have 67.85% support. While this is not ideal, it does cover the latest versions of the evergreen browsers, which is a good start. The only browsers lacking support are IE and Opera Mini. This has the added benefit of meaning we can begin to drop the extra dependence on <a href="https://modernizr.com/">Modernizr</a>.</p>
+<p>See <a href="https://caniuse.com/#feat=css-featurequeries">http://caniuse.com/#feat=css-featurequeries</a></p>
+<h2>Flexbox – 95.4% browser support</h2>
+<p>This is one feature I’ve heard nothing about. Only joking! It’s talked about in hundreds of blog posts and conferences. It’s a fantastic tool to position elements either stacked horizontally or vertically, giving us the ability to easily centre elements or make elements all the same height. It also allows us to change the order in which the elements are displayed on the page. Have you ever been asked to swap the order of the image and text of a section when on small screen. I have — flexbox to the rescue.</p>
+<pre class=" language-css"><div class="codecolorer-container text default  language-css" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">&lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@media&lt;/span&gt; only &lt;span class=&quot;token function&quot;&gt;min-width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;768px&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token selector&quot;&gt;.row&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;<br />
+&nbsp; &nbsp; &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flex&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&nbsp; &nbsp; &lt;span class=&quot;token property&quot;&gt;flex-direction&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; column-reverse&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;<br />
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;</div></div>
+</pre>
+<p>That said, I was a little wary of using it for anything important because, like all of these things, I didn’t believe its support was good enough. Flexbox proudly boasts a huge 95.4% browser support, spanning all the latest browsers, including Opera Mini. IE9 and below will miss out but when using it for aesthetics, that’s probably ok.</p>
+<p>See <a href="https://caniuse.com/#feat=flexbox">http://caniuse.com/#feat=flexbox</a></p>
+<h2>3D transforms – 89.87% browser support</h2>
+<p>This feature allows us to position an element in the third dimension. This feature also includes the perspective property, allowing us to set the z-index of a 3D element.</p>
+<p>We’ve all seen awesome examples of 3D scenes using just CSS, but the level of browser support took me by surprise. With an impressive 89.87% global support with a single prefix of webkit, it is ready to be used today in production. I would suggest dropping the fallback, as in most cases the functionality of a 3D element will be aesthetic.</p>
+<p>A quick example of a card that would spin and flip as you hover over it.</p>
+<pre class=" language-css"><div class="codecolorer-container text default  language-css" style="overflow:auto;white-space:nowrap;width:660px;"><div class="text codecolorer">&lt;span class=&quot;token selector&quot;&gt;.card&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;-webkit-transform-style&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; preserve-3d&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;transform-style&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; preserve-3d&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;-webkit-transform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;rotateX&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;0deg&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;rotateY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;0deg&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;rotateX&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;0deg&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;rotateY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;0deg&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; transform 1s&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;<br />
+<br />
+&lt;span class=&quot;token selector&quot;&gt;.card:hover&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;-webkit-transform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;rotateX&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;180deg&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;rotateY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;180deg&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&nbsp; &lt;span class=&quot;token property&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;rotateX&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;180deg&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;rotateY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;180deg&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;<br />
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;</div></div>
+</pre>
+<p>See <a href="https://caniuse.com/#feat=transforms3d">http://caniuse.com/#feat=transforms3d</a></p>
+<h2>In conclusion</h2>
+<p>I read a lot of blog posts and listen to a lot of podcasts all about frontend web development but did not realise how important it was to read through the features documented on Can I use. Truly, hats off to the people working on the site.</p>
+<p>If you’re unsure how well a feature is supported, Can I use is the holy grail. I would recommend to any frontend dev to take the time to read through all the features, their support and known feature issues. There is no better shortcut to levelling up your CSS knowledge.</p>
+<p>I hope you can see all the awesome stuff that can be developed using the features in this post. 2016 is the year to start using new features and create rich immersive user experiences. Whether it’s web apps or even a simple site. Never wait for “permission” to use new features just make sure you understand the support and consider fallbacks.</p>
+<p>Now go out and use them!</p>
+</div>
+<p><span class='st_facebook_hcount' st_title='Surprising CSS selectors you can use today' st_url='https://anthonydillon.com/blog/surprising-css-selectors-you-can-use-today/' displayText='share'></span><span class='st_twitter_hcount' st_title='Surprising CSS selectors you can use today' st_url='https://anthonydillon.com/blog/surprising-css-selectors-you-can-use-today/' displayText='share'></span></p> </div>
+<div class="entry-utility">
+This entry was posted in <a href="category/blogs/index.html" title="View all posts in Blogs" rel="category tag">Blogs</a>. Bookmark the <a href="index.html-105.html" title="Permalink to Surprising CSS selectors you can use today" rel="bookmark">permalink</a>. </div>
+</div>
+<div id="nav-below" class="navigation">
+<div class="nav-previous"><a href="index.html-103.html" rel="prev"><span class="meta-nav">&larr;</span> Ant.FM</a></div>
+<div class="nav-next"></div>
+</div>
+<div id="comments">
+<div id="respond">
+<h3 id="reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html-105.html#respond" style="display:none;">Cancel reply</a></small></h3>
+<form action="https://anthonydillon.com/blog/wp-comments-post.php" method="post" id="commentform">
+<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p> <p class="comment-form-author"><label for="author">Name</label> <span class="required">*</span><input id="author" name="author" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-email"><label for="email">Email</label> <span class="required">*</span><input id="email" name="email" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-url"><label for="url">Website</label><input id="url" name="url" type="text" value="" size="30" /></p>
+<p class="comment-form-comment"><label for="comment">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p> <p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code></p> <p class="form-submit">
+<input name="submit" type="submit" id="submit" value="Post Comment" />
+<input type='hidden' name='comment_post_ID' value='105' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="e34db6cb9b" /></p> </form>
+</div>
+</div>
+</div>
+</div>
+<div id="primary" class="widget-area" role="complementary">
+<ul class="xoxo">
+<li id="recent-posts-2" class="widget-container widget_recent_entries"> <h3 class="widget-title">Recent Posts</h3> <ul>
+<li><a href="index.html-105.html" title="Surprising CSS selectors you can use today">Surprising CSS selectors you can use today</a></li>
+<li><a href="index.html-103.html" title="Ant.FM">Ant.FM</a></li>
+<li><a href="index.html-90.html" title="Always show the time on Moto360">Always show the time on Moto360</a></li>
+<li><a href="index.html-84.html" title="Handling &#8220;class&#8221; attribute in Beautifulsoup">Handling &#8220;class&#8221; attribute in Beautifulsoup</a></li>
+<li><a href="index.html-78.html" title="Using Modernizr with Opera Mini">Using Modernizr with Opera Mini</a></li>
+</ul>
+</li><li id="linkcat-2" class="widget-container widget_links"><h3 class="widget-title">Friends</h3>
+<ul class='xoxo blogroll'>
+<li><a href="http://naobrown.com/">Glyn Dillon</a></li>
+<li><a href="http://www.rekim.com/">Mike Robinson</a></li>
+<li><a href="http://www.timwatkins.uk.com/">Tim Watkins</a></li>
+<li><a href="http://zulu-studios.com/">Zulu Studios</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="footer">
+<div id="wrapper">
+<img src="../images/footer_logo.jpg" />
+<p>&copy; 2021 ANTHONY DILLON</p>
+</div>
+</div>
+
+</div>
+<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
